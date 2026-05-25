@@ -97,6 +97,32 @@ h1 { font-size: 34px; margin: 10px 0; }
     font-size: 19px;
     line-height: 1.45;
 }
+.presentation-shortcuts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 18px 0;
+}
+.presentation-shortcuts a, .shortcut-card a {
+    display: inline-block;
+    padding: 9px 12px;
+    border: 4px outset #e7e7e7;
+    background: #c0c0c0;
+    color: #0000ee;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.presentation-shortcuts a:active, .shortcut-card a:active {
+    border-style: inset;
+}
+.oral-plan {
+    max-width: 980px;
+    padding: 12px 14px;
+    border: 4px ridge #267c8c;
+    background: #e9f8ff;
+    font-size: 18px;
+    line-height: 1.45;
+}
 .presentation-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -189,6 +215,14 @@ h1 { font-size: 34px; margin: 10px 0; }
 }
 .deploy-line span {
     background: #e9f8ff;
+}
+.shortcut-card {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
 }
 .panel-label {
     position: absolute;
