@@ -1,0 +1,24 @@
+{
+  "projet": "PokéQuest 90s",
+  "base_de_donnees": "cartePokemon",
+  "connexion": {
+    "host": "localhost",
+    "utilisateur": "admin",
+    "mot_de_passe": "Admin123"
+  },
+  "tables": ["generation", "serie", "booster", "rarete", "tbl_carte"],
+  "carte_exemple": {
+    "id_pokemon": "pikachu",
+    "numero_carte": "58/102",
+    "valeur_carte": 14.95,
+    "pv": 40,
+    "nom_carte": "Pikachu",
+    "generation": "Génération 1",
+    "type": "Électrique",
+    "talent": "Petite souris électrique très populaire.",
+    "illustration": "https://img.pokemondb.net/artwork/large/pikachu.jpg",
+    "id_serie": 1,
+    "id_booster": 1,
+    "id_rarete": 1
+  }
+}

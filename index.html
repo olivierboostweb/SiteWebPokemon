@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokéQuest 90s - Cartes Pokémon</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page">
+        <aside class="sidebar">
+            <div class="fast-track">★ FAST TRACK!</div>
+            <a href="#" data-tab="accueil">Accueil</a>
+            <a href="#" data-tab="generations">Générations</a>
+            <a href="#" data-tab="ajouter">Ajouter une carte</a>
+            <a href="#" data-tab="cartes">Toutes les cartes</a>
+            <a href="#" data-tab="infos">Infos DB</a>
+
+            <div class="ad-box">
+                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png" alt="Pokéball">
+                <span>Attrape toutes les cartes pour seulement $14.95!</span>
+            </div>
+        </aside>
+
+        <main class="content">
+            <header class="hero">
+                <div class="logo-line">⚡ POKÉQUEST ⚡</div>
+                <h1>Explore le monde des cartes Pokémon!</h1>
+                <p class="blink">* Le site #1 des dresseurs depuis 1997 *</p>
+            </header>
+
+            <nav class="top-links">
+                <button data-tab="accueil">Home</button>
+                <button data-tab="generations">Générations</button>
+                <button data-tab="ajouter">Ajouter</button>
+                <button data-tab="cartes">Cartes</button>
+            </nav>
+
+            <section id="message" class="message hidden"></section>
+
+            <section id="tab-accueil" class="tab active">
+                <div class="retro-panel">
+                    <div class="panel-label">FIND IT!</div>
+                    <h2>Bienvenue sur PokéQuest</h2>
+                    <p>Choisis une génération pour voir ses cartes, clique sur une carte pour l'afficher à droite, ou ajoute une nouvelle carte dans la base de données.</p>
+                    <ul>
+                        <li><a href="#" data-tab="generations">Interactive Générations</a> — cartes classées par génération</li>
+                        <li><a href="#" data-tab="ajouter">AddQuest</a> — ajouter une carte Pokémon</li>
+                        <li><a href="#" data-tab="cartes">CardPlan USA</a> — collection complète</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="tab-generations" class="tab">
+                <div class="retro-panel">
+                    <div class="panel-label">LET'S GO!</div>
+                    <h2>Générations Pokémon</h2>
+                    <div id="generationsList" class="button-grid"></div>
+                </div>
+
+                <div class="layout-cards">
+                    <div>
+                        <h3 id="generationTitle">Choisis une génération</h3>
+                        <div id="cardsByGeneration" class="cards-grid"></div>
+                    </div>
+                    <aside id="cardPreviewGeneration" class="card-preview sticky-preview">
+                        <p>Clique sur une carte pour la voir ici.</p>
+                    </aside>
+                </div>
+            </section>
+
+            <section id="tab-ajouter" class="tab">
+                <div class="retro-panel">
+                    <div class="panel-label">GET MORE INFO!</div>
+                    <h2 id="formTitle">Ajouter une carte</h2>
+                    <form id="addCardForm" class="retro-form">
+                        <input type="hidden" name="id_carte">
+                        <label>Nom de la carte *<input name="nom_carte" required placeholder="Ex: Pikachu"></label>
+                        <label>ID Pokémon *<input name="id_pokemon" required placeholder="Ex: pikachu"></label>
+                        <label>Numéro de carte *<input name="numero_carte" required placeholder="Ex: 025/102"></label>
+                        <label>Valeur ($)<input name="valeur_carte" type="number" step="0.01" placeholder="12.99"></label>
+                        <label>PV<input name="pv" type="number" placeholder="60"></label>
+                        <label>Génération<input name="generation" placeholder="Ex: Génération 1"></label>
+                        <label>Type<input name="type" placeholder="Ex: Électrique"></label>
+                        <label>Talent<textarea name="talent" placeholder="Ex: Statik"></textarea></label>
+                        <label>URL image<input name="illustration" placeholder="Laisse vide pour image automatique"></label>
+                        <label>Série *<select name="id_serie" id="serieSelect" required></select></label>
+                        <label>Booster *<select name="id_booster" id="boosterSelect" required></select></label>
+                        <label>Rareté *<select name="id_rarete" id="rareteSelect" required></select></label>
+                        <div class="form-actions">
+                            <button id="submitCardButton" class="submit-btn" type="submit">Ajouter dans la DB</button>
+                            <button id="cancelEditButton" class="secondary-btn hidden" type="button">Annuler</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <section id="tab-cartes" class="tab">
+                <div class="layout-cards">
+                    <div>
+                        <div class="retro-panel small-panel">
+                            <div class="panel-label">CARD MAP!</div>
+                            <h2>Toutes les cartes</h2>
+                            <input id="searchInput" class="search" placeholder="Rechercher une carte...">
+                        </div>
+                        <div id="allCards" class="cards-grid"></div>
+                    </div>
+                    <aside id="cardPreviewAll" class="card-preview sticky-preview">
+                        <p>Clique sur une carte pour la voir ici.</p>
+                    </aside>
+                </div>
+            </section>
+
+            <section id="tab-infos" class="tab">
+                <div class="retro-panel">
+                    <div class="panel-label">ABOUT!</div>
+                    <h2>Structure utilisée</h2>
+                    <p>Base: <strong>PostgreSQL sur Vercel</strong></p>
+                    <p>Tables: <strong>generation</strong>, <strong>serie</strong>, <strong>booster</strong>, <strong>rarete</strong>, <strong>tbl_carte</strong>.</p>
+                    <p>API: <strong>/api</strong> avec ajout, modification et suppression.</p>
+                </div>
+            </section>
+
+            <footer>
+                <hr>
+                [ <a href="#" data-tab="accueil">Help</a> ] [ <a href="#" data-tab="infos">About</a> ] [ <a href="#" data-tab="generations">What's New</a> ] [ <a href="#" data-tab="accueil">Home</a> ]
+                <p>Copyright 1996-97 | PokéQuest Global Corporation</p>
+            </footer>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

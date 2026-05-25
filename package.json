@@ -1,0 +1,15 @@
+{
+  "name": "pokemon-90s-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "PokéQuest 90s avec API Vercel et base PostgreSQL modifiable.",
+  "scripts": {
+    "db:push": "node scripts/import-db.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "pg": "^8.16.0"
+  }
+}
