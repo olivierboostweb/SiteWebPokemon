@@ -11,6 +11,7 @@
         <aside class="sidebar">
             <div class="fast-track">★ FAST TRACK!</div>
             <a href="#" data-tab="accueil">Accueil</a>
+            <a href="#" data-tab="presentation">Présentation</a>
             <a href="#" data-tab="generations">Générations</a>
             <a href="#" data-tab="ajouter">Ajouter une carte</a>
             <a href="#" data-tab="cartes">Toutes les cartes</a>
@@ -31,6 +32,7 @@
 
             <nav class="top-links">
                 <button data-tab="accueil">Home</button>
+                <button data-tab="presentation">Présentation</button>
                 <button data-tab="generations">Générations</button>
                 <button data-tab="ajouter">Ajouter</button>
                 <button data-tab="cartes">Cartes</button>
@@ -47,7 +49,97 @@
                         <li><a href="#" data-tab="generations">Interactive Générations</a> — cartes classées par génération</li>
                         <li><a href="#" data-tab="ajouter">AddQuest</a> — ajouter une carte Pokémon</li>
                         <li><a href="#" data-tab="cartes">CardPlan USA</a> — collection complète</li>
+                        <li><a href="#" data-tab="presentation">Présentation</a> - support d'oral de 5 à 10 minutes</li>
                     </ul>
+                </div>
+            </section>
+
+            <section id="tab-presentation" class="tab">
+                <div class="presentation-stage">
+                    <div class="presentation-kicker">MODE PRÉSENTATION - 5 À 10 MIN</div>
+                    <h2>PokéQuest 90s: collection de cartes Pokémon connectée</h2>
+                    <p class="presentation-intro">
+                        Cette section sert de support pour présenter le site: son idée, son interface, sa base de données,
+                        ses fonctions de gestion et son déploiement sur Vercel.
+                    </p>
+
+                    <div class="presentation-grid">
+                        <article class="deck-slide cover-slide">
+                            <span class="slide-number">01</span>
+                            <h3>Introduction</h3>
+                            <p>PokéQuest 90s est un site web au style rétro qui permet de consulter une collection de cartes Pokémon et de les organiser par génération.</p>
+                            <div class="speaker-note">Durée: 45 secondes. Présenter le thème, le style années 90 et le but du projet.</div>
+                        </article>
+
+                        <article class="deck-slide">
+                            <span class="slide-number">02</span>
+                            <h3>Objectif du site</h3>
+                            <p>Le site ne sert pas seulement à afficher des cartes: il montre comment une interface web peut communiquer avec une vraie base de données modifiable.</p>
+                            <ul>
+                                <li>Afficher les générations Pokémon.</li>
+                                <li>Voir les cartes avec leurs détails.</li>
+                                <li>Ajouter, modifier et supprimer des cartes.</li>
+                            </ul>
+                            <div class="speaker-note">Durée: 1 minute. Expliquer la différence entre un site statique et un site connecté.</div>
+                        </article>
+
+                        <article class="deck-slide">
+                            <span class="slide-number">03</span>
+                            <h3>Expérience utilisateur</h3>
+                            <p>L'utilisateur navigue avec des onglets simples: accueil, générations, ajout, collection complète et informations techniques.</p>
+                            <div class="feature-strip">
+                                <span>Navigation rapide</span>
+                                <span>Aperçu de carte</span>
+                                <span>Recherche</span>
+                            </div>
+                            <div class="speaker-note">Durée: 1 à 2 minutes. Montrer les onglets et cliquer sur une carte.</div>
+                        </article>
+
+                        <article class="deck-slide">
+                            <span class="slide-number">04</span>
+                            <h3>Base de données</h3>
+                            <p>Les données sont séparées en tables: générations, séries, boosters, raretés et cartes. Cette structure évite de tout mélanger dans un seul fichier.</p>
+                            <div class="db-map">
+                                <span>generation</span>
+                                <span>serie</span>
+                                <span>booster</span>
+                                <span>rarete</span>
+                                <strong>tbl_carte</strong>
+                            </div>
+                            <div class="speaker-note">Durée: 1 à 2 minutes. Décrire rapidement les tables et les relations.</div>
+                        </article>
+
+                        <article class="deck-slide">
+                            <span class="slide-number">05</span>
+                            <h3>Fonctions modifiables</h3>
+                            <p>La collection peut évoluer directement depuis le site. Une nouvelle carte est envoyée à l'API, puis enregistrée dans PostgreSQL.</p>
+                            <ul>
+                                <li>Ajout d'une carte avec formulaire.</li>
+                                <li>Modification depuis l'aperçu.</li>
+                                <li>Suppression si une entrée est incorrecte.</li>
+                            </ul>
+                            <div class="speaker-note">Durée: 1 à 2 minutes. Faire une petite démonstration d'ajout ou de modification.</div>
+                        </article>
+
+                        <article class="deck-slide">
+                            <span class="slide-number">06</span>
+                            <h3>Déploiement Vercel</h3>
+                            <p>Le projet utilise une API serverless sur Vercel et une base PostgreSQL Neon. Cela permet au site d'être en ligne tout en gardant une base de données persistante.</p>
+                            <div class="deploy-line">
+                                <span>Interface</span>
+                                <span>/api</span>
+                                <span>PostgreSQL</span>
+                            </div>
+                            <div class="speaker-note">Durée: 1 minute. Expliquer que Vercel héberge le site et Neon garde les données.</div>
+                        </article>
+
+                        <article class="deck-slide final-slide">
+                            <span class="slide-number">07</span>
+                            <h3>Conclusion</h3>
+                            <p>PokéQuest 90s combine une identité visuelle rétro, une navigation simple et une vraie base de données. Le projet peut être amélioré avec des comptes utilisateurs, des images uploadées et des filtres plus avancés.</p>
+                            <div class="speaker-note">Durée: 45 secondes. Résumer ce qui fonctionne et ouvrir sur les améliorations possibles.</div>
+                        </article>
+                    </div>
                 </div>
             </section>
 
@@ -123,7 +215,7 @@
 
             <footer>
                 <hr>
-                [ <a href="#" data-tab="accueil">Help</a> ] [ <a href="#" data-tab="infos">About</a> ] [ <a href="#" data-tab="generations">What's New</a> ] [ <a href="#" data-tab="accueil">Home</a> ]
+                [ <a href="#" data-tab="accueil">Help</a> ] [ <a href="#" data-tab="infos">About</a> ] [ <a href="#" data-tab="presentation">Présentation</a> ] [ <a href="#" data-tab="generations">What's New</a> ] [ <a href="#" data-tab="accueil">Home</a> ]
                 <p>Copyright 1996-97 | PokéQuest Global Corporation</p>
             </footer>
         </main>
